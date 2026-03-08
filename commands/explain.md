@@ -60,7 +60,7 @@ Focus your explanation on the specific file or directory passed as `$ARGUMENTS`.
 
 ## Rules
 
-- Always include file paths with line numbers (e.g., `app_web/screener.py:42`) so readers can jump to the code
+- Always include file paths with line numbers (e.g., `app_web/main.py:42`) so readers can jump to the code
 - Write for a developer who is new to the project but not new to programming
 - Keep it factual — describe what IS, not what should be
 - Don't include code snippets longer than 5 lines; point to the file instead

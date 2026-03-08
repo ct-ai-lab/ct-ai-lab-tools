@@ -25,7 +25,7 @@ Create a brief summary of what the app does before proceeding.
 app_web/
 ├── main.py              # FastAPI app, routes, API endpoints
 ├── [app_logic].py       # Business logic extracted from Gradio callbacks
-├── hospital_data.json   # (or equivalent data file, if applicable)
+├── [data].json           # Static data files, if applicable
 ├── templates/
 │   └── index.html       # Single-page Jinja2 template
 ├── static/

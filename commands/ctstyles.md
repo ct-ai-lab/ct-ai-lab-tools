@@ -32,12 +32,12 @@ Read the HTML template(s) and CSS file(s). Identify:
 #### Header
 - Add the accessibility bar (report accessibility issue link)
 - Add the CT.GOV top bar (CT.GOV | State of Connecticut)
-- Add the OHA header band (CT logo, app title, subtitle, BETA tag)
-- Add the resource banner (yellow/info banner below header)
+- Add the agency header band (CT logo, app title, subtitle, optional BETA tag)
+- Add the resource banner (yellow/info banner below header, if applicable)
 - Add the navigation bar (horizontal tabs with proper order)
 
 #### Footer
-- Add the OHA footer (office name, address, phone, portal link)
+- Add the agency footer (office name, address, phone, portal link)
 
 #### Colors & Typography
 - Replace all colors with CSS custom properties from the design system
