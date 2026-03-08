@@ -1,14 +1,32 @@
 # CT AI Lab Tools
 
-Reusable [Claude Code](https://docs.anthropic.com/en/docs/claude-code) custom slash commands for building, styling, auditing, and deploying state government web applications.
+Reusable AI coding agent skills for building, styling, auditing, and deploying state government web applications. Supports [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [OpenAI Codex](https://openai.com/index/codex/).
 
 Built by the Connecticut AI Enablement Lab. Designed to be forked by other states and customized.
 
-## What's in here
+## Repository structure
 
-### Skills (slash commands)
+```
+ct-ai-lab-tools/
+├── claude_commands/          # Claude Code custom slash commands (.md)
+│   ├── explain.md
+│   ├── scaffold.md
+│   ├── ctstyles.md
+│   ├── accessibility.md
+│   ├── mobile.md
+│   ├── deploymentprecheck.md
+│   ├── lint.md
+│   └── hook.md
+├── codex_commands/           # OpenAI Codex instructions (.md) — coming soon
+├── references/               # Shared reference docs used by skills
+│   ├── ct_design_system.md
+│   └── fastapi_scaffold.md
+└── README.md
+```
 
-| Command | What it does |
+## Available skills
+
+| Skill | What it does |
 |---|---|
 | `/explain` | Document the codebase — architecture, key features, file map |
 | `/scaffold` | Convert a Gradio prototype to a production FastAPI + Jinja2 app |
@@ -28,29 +46,31 @@ Built by the Connecticut AI Enablement Lab. Designed to be forked by other state
 
 ## Installation
 
-### For a single project
+### Claude Code
 
-Copy the commands you want into your project's `.claude/commands/` directory:
+Copy the skills into your project's `.claude/commands/` directory:
 
 ```bash
 # From your project root
 mkdir -p .claude/commands
 
 # Copy all skills
-cp /path/to/ct-ai-lab-tools/commands/*.md .claude/commands/
+cp /path/to/ct-ai-lab-tools/claude_commands/*.md .claude/commands/
 
 # Or copy just the ones you need
-cp /path/to/ct-ai-lab-tools/commands/scaffold.md .claude/commands/
-cp /path/to/ct-ai-lab-tools/commands/accessibility.md .claude/commands/
+cp /path/to/ct-ai-lab-tools/claude_commands/scaffold.md .claude/commands/
 ```
 
-### For all your projects (user-level)
+For all your projects (user-level):
 
 ```bash
-# Copy to your user-level commands directory
 mkdir -p ~/.claude/commands
-cp /path/to/ct-ai-lab-tools/commands/*.md ~/.claude/commands/
+cp /path/to/ct-ai-lab-tools/claude_commands/*.md ~/.claude/commands/
 ```
+
+### OpenAI Codex
+
+Coming soon. Codex instructions will be available in the `codex_commands/` directory once the format is finalized.
 
 ### Reference docs
 
@@ -58,11 +78,13 @@ Skills like `/ctstyles` and `/scaffold` reference docs in the `references/` fold
 
 ## Usage
 
-Once installed, use them in Claude Code like any slash command:
+### Claude Code
+
+Once installed, use them like any slash command:
 
 ```
 > /explain
-> /scaffold
+> /scaffold path/to/gradio_app.py
 > /ctstyles
 > /accessibility
 > /mobile
@@ -71,12 +93,9 @@ Once installed, use them in Claude Code like any slash command:
 > /hook
 ```
 
-Some commands accept arguments:
+### OpenAI Codex
 
-```
-> /explain app_web/screener.py
-> /scaffold path/to/gradio_app.py
-```
+Instructions TBD — will follow Codex's task/instruction format once available.
 
 ## For other states
 
