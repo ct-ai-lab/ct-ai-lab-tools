@@ -2,7 +2,7 @@
 
 Reusable [Claude Code](https://docs.anthropic.com/en/docs/claude-code) custom slash commands for building, styling, auditing, and deploying state government web applications.
 
-Built by the Connecticut AI Lab at the Office of the Healthcare Advocate. Designed to be forked by other states and customized.
+Built by the Connecticut AI Enablement Lab. Designed to be forked by other states and customized.
 
 ## What's in here
 
