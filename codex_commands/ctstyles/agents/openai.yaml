@@ -1,4 +1,4 @@
 interface:
   display_name: "Design System"
-  short_description: "Apply design system styles consistently"
-  default_prompt: "Use $ctstyles to align this app to our design system and accessibility standards."
+  short_description: "Match the org design system structure and styles"
+  default_prompt: "Use $ctstyles to restyle this app to our design system, including header/footer structure, tokens, responsive behavior, and accessibility standards."
