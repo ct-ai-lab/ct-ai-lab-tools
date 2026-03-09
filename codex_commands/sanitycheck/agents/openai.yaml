@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sanity Check"
+  short_description: "Review app fit, approach, and better paths"
+  default_prompt: "Use $sanitycheck to review what this app is trying to do, what the team got right, what should change, and whether there is a better way to serve its target users."
