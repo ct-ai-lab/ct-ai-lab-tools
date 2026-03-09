@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Smoke Pack"
+  short_description: "Generate fast smoke tests for CI"
+  default_prompt: "Use $test-smoke-pack to add a lightweight smoke test suite for our critical flows."

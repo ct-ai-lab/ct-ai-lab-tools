@@ -25,6 +25,9 @@ ct-ai-lab-tools/
 |  |- hook/
 |  |- lint/
 |  |- mobile/
+|  |- pii-data-safety/
+|  |- security-baseline-audit/
+|  |- test-smoke-pack/
 |  `- scaffold/
 |- references/               # Shared reference docs used by skills
 |  |- ct_design_system.md
@@ -44,6 +47,9 @@ ct-ai-lab-tools/
 | `deploymentprecheck` | Verify cloud deployment readiness |
 | `lint` | Run linting and fix safe quality issues |
 | `hook` | Set up and tune pre-commit hooks |
+| `security-baseline-audit` | Run a baseline security review before release |
+| `pii-data-safety` | Audit and reduce PII exposure risk |
+| `test-smoke-pack` | Build lightweight smoke tests for critical flows |
 
 ### Reference docs
 

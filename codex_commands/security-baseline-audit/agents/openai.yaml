@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Baseline Audit"
+  short_description: "Audit core web app security controls"
+  default_prompt: "Use $security-baseline-audit to run a pre-release security baseline audit for this codebase."
