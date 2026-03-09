@@ -1,6 +1,6 @@
 # CT AI Lab Tools
 
-Reusable AI coding agent skills for building, styling, auditing, and deploying state government web applications. Supports [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [OpenAI Codex](https://openai.com/index/codex/).
+Reusable AI coding agent skills for building, styling, auditing, and deploying state government web applications. Supports [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and OpenAI Codex.
 
 Built by the Connecticut AI Enablement Lab. Designed to be forked by other states and customized.
 
@@ -8,60 +8,63 @@ Built by the Connecticut AI Enablement Lab. Designed to be forked by other state
 
 ```
 ct-ai-lab-tools/
-├── claude_commands/          # Claude Code custom slash commands (.md)
-│   ├── explain.md
-│   ├── scaffold.md
-│   ├── ctstyles.md
-│   ├── accessibility.md
-│   ├── mobile.md
-│   ├── deploymentprecheck.md
-│   ├── lint.md
-│   └── hook.md
-├── codex_commands/           # OpenAI Codex instructions (.md) — coming soon
-├── references/               # Shared reference docs used by skills
-│   ├── ct_design_system.md
-│   └── fastapi_scaffold.md
-└── README.md
+|- claude_commands/          # Claude custom slash commands (.md)
+|  |- explain.md
+|  |- scaffold.md
+|  |- ctstyles.md
+|  |- accessibility.md
+|  |- mobile.md
+|  |- deploymentprecheck.md
+|  |- lint.md
+|  `- hook.md
+|- codex_commands/           # Codex skills (skill folders)
+|  |- accessibility/
+|  |- ctstyles/
+|  |- deploymentprecheck/
+|  |- explain/
+|  |- hook/
+|  |- lint/
+|  |- mobile/
+|  `- scaffold/
+|- references/               # Shared reference docs used by skills
+|  |- ct_design_system.md
+|  `- fastapi_scaffold.md
+`- README.md
 ```
 
 ## Available skills
 
 | Skill | What it does |
 |---|---|
-| `/explain` | Document the codebase — architecture, key features, file map |
-| `/scaffold` | Convert a Gradio prototype to a production FastAPI + Jinja2 app |
-| `/ctstyles` | Apply the CT.gov / AI Lab design system to an app |
-| `/accessibility` | Audit and fix accessibility (WCAG 2.1 AA) |
-| `/mobile` | Check for mobile responsiveness issues |
-| `/deploymentprecheck` | Verify the app is ready for Azure deployment |
-| `/lint` | Run and fix linting issues |
-| `/hook` | Set up pre-commit hooks |
+| `explain` | Document the codebase: architecture, key features, file map |
+| `scaffold` | Convert a Gradio prototype to a production FastAPI + template app |
+| `ctstyles` | Apply a design system consistently across UI components |
+| `accessibility` | Audit and fix accessibility issues (WCAG 2.1 AA) |
+| `mobile` | Audit and fix mobile responsiveness issues |
+| `deploymentprecheck` | Verify cloud deployment readiness |
+| `lint` | Run linting and fix safe quality issues |
+| `hook` | Set up and tune pre-commit hooks |
 
 ### Reference docs
 
 | File | Purpose |
 |---|---|
-| `references/ct_design_system.md` | Full CT.gov design tokens, components, and patterns |
+| `references/ct_design_system.md` | Design tokens, components, and layout patterns |
 | `references/fastapi_scaffold.md` | Standard FastAPI project structure and conventions |
 
 ## Installation
 
 ### Claude Code
 
-Copy the skills into your project's `.claude/commands/` directory:
+Copy the slash commands into your project's `.claude/commands/` directory:
 
 ```bash
-# From your project root
+# from your project root
 mkdir -p .claude/commands
-
-# Copy all skills
 cp /path/to/ct-ai-lab-tools/claude_commands/*.md .claude/commands/
-
-# Or copy just the ones you need
-cp /path/to/ct-ai-lab-tools/claude_commands/scaffold.md .claude/commands/
 ```
 
-For all your projects (user-level):
+For all projects (user-level):
 
 ```bash
 mkdir -p ~/.claude/commands
@@ -70,67 +73,80 @@ cp /path/to/ct-ai-lab-tools/claude_commands/*.md ~/.claude/commands/
 
 ### OpenAI Codex
 
-Coming soon. Codex instructions will be available in the `codex_commands/` directory once the format is finalized.
+Codex skills are the folders in `codex_commands/`.
 
-### Reference docs
+Copy each skill folder into your Codex skills directory (`$CODEX_HOME/skills` or `~/.codex/skills`):
 
-Skills like `/ctstyles` and `/scaffold` reference docs in the `references/` folder. Copy the `references/` directory alongside your commands, or update the paths in the command files to point to where you keep them.
+```bash
+mkdir -p ~/.codex/skills
+cp -R /path/to/ct-ai-lab-tools/codex_commands/* ~/.codex/skills/
+```
+
+PowerShell example:
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME/.codex/skills" | Out-Null
+Copy-Item -Recurse -Force "C:\path\to\ct-ai-lab-tools\codex_commands\*" "$HOME/.codex/skills"
+```
 
 ## Usage
 
 ### Claude Code
 
-Once installed, use them like any slash command:
+Use slash commands:
 
-```
-> /explain
-> /scaffold path/to/gradio_app.py
-> /ctstyles
-> /accessibility
-> /mobile
-> /deploymentprecheck
-> /lint
-> /hook
+```text
+/explain
+/scaffold path/to/gradio_app.py
+/ctstyles
+/accessibility
+/mobile
+/deploymentprecheck
+/lint
+/hook
 ```
 
 ### OpenAI Codex
 
-Instructions TBD — will follow Codex's task/instruction format once available.
+Invoke skills explicitly in prompts using `$skill-name`, or rely on skill trigger descriptions.
+
+```text
+Use $explain to refresh ARCHITECTURE.md for this repo.
+Use $scaffold on app.py and keep feature parity.
+Use $ctstyles to align this UI to our design system.
+```
 
 ## For other states
 
 This repo is designed to be forked and customized:
 
-1. **Fork this repo**
-2. **Replace `references/ct_design_system.md`** with your state's design tokens (colors, fonts, header/footer patterns)
-3. **Rename `/ctstyles`** to match your state (e.g., `/nystyles`, `/castyles`)
-4. **Update deployment targets** in `/deploymentprecheck` if you use AWS, GCP, etc. instead of Azure
-5. **Keep everything else** — the scaffold, accessibility, mobile, lint, and hook skills are state-agnostic
+1. Fork this repo.
+2. Replace `references/ct_design_system.md` with your own design tokens and component patterns.
+3. Rename `ctstyles` to your state naming if preferred (for example, `nystyles`, `castyles`).
+4. Update deployment checks in `deploymentprecheck` for your cloud target if not Azure.
+5. Keep scaffold, accessibility, mobile, lint, and hook mostly unchanged.
 
-## Our workflow
+## Suggested workflow
 
-```
+```text
 Gradio prototype (.py / .ipynb)
         |
         v
-/scaffold  ——>  FastAPI + Jinja2 app structure
+scaffold -> production FastAPI + template app
         |
         v
-/ctstyles  ——>  Apply CT.gov design system
+ctstyles -> apply design system
         |
         v
-/accessibility + /mobile  ——>  Audit and fix
+accessibility + mobile -> audit and fix
         |
         v
-/deploymentprecheck  ——>  Verify Azure readiness
+deploymentprecheck -> verify deployment readiness
         |
         v
-/hook + /lint  ——>  Set up CI guardrails
-        |
-        v
-Deploy to Azure App Service
+hook + lint -> add quality guardrails
 ```
 
 ## License
 
-MIT — use it, fork it, improve it.
+MIT - use it, fork it, improve it.

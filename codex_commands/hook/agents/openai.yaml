@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pre-commit Hooks"
+  short_description: "Install and tune pre-commit checks"
+  default_prompt: "Use $hook to configure pre-commit hooks for this repository."

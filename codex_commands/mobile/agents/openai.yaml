@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mobile Audit"
+  short_description: "Fix responsive mobile UI issues"
+  default_prompt: "Use $mobile to audit this app for mobile responsiveness issues and fix them."

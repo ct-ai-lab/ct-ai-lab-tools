@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scaffold App"
+  short_description: "Migrate prototype to web scaffold"
+  default_prompt: "Use $scaffold to convert this prototype into a production-ready web app scaffold."

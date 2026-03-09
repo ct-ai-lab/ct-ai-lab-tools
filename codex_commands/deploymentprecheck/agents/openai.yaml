@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deployment Precheck"
+  short_description: "Audit deployment readiness and risks"
+  default_prompt: "Use $deploymentprecheck to run a deployment readiness audit on this project."

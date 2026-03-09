@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain Codebase"
+  short_description: "Produce practical architecture docs"
+  default_prompt: "Use $explain to generate or refresh ARCHITECTURE.md for this repository."

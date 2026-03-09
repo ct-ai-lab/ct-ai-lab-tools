@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lint And Fix"
+  short_description: "Run lint checks and apply fixes"
+  default_prompt: "Use $lint to run linting on this repo and fix safe issues."
