@@ -1,6 +1,6 @@
 # CT AI Lab Tools
 
-Reusable AI coding agent skills for building, styling, auditing, and deploying state government web applications. Supports [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and OpenAI Codex.
+Reusable AI coding agent skills for building, styling, auditing, and deploying state government web applications. Supports [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [OpenAI Codex](https://openai.com/codex/).
 
 Built by the Connecticut AI Enablement Lab. Designed to be forked by other states and customized.
 
