@@ -30,8 +30,10 @@ ct-ai-lab-tools/
 |  |- test-smoke-pack/
 |  `- scaffold/
 |- references/               # Shared reference docs used by skills
+|  |- lab_style_guide.md
 |  |- ct_design_system.md
-|  `- fastapi_scaffold.md
+|  |- fastapi_scaffold.md
+|  `- ui_audit.py
 `- README.md
 ```
 
@@ -41,7 +43,7 @@ ct-ai-lab-tools/
 |---|---|
 | `explain` | Document the codebase: architecture, key features, file map |
 | `scaffold` | Convert a Gradio prototype to a production FastAPI + template app |
-| `ctstyles` | Apply a design system consistently across UI components |
+| `ctstyles` | Apply the lab style guide (CT.GOV chrome, logo, type scale, spacing, accessibility) across UI components |
 | `accessibility` | Audit and fix accessibility issues (WCAG 2.1 AA) |
 | `mobile` | Audit and fix mobile responsiveness issues |
 | `deploymentprecheck` | Verify cloud deployment readiness |
@@ -55,7 +57,9 @@ ct-ai-lab-tools/
 
 | File | Purpose |
 |---|---|
-| `references/ct_design_system.md` | Design tokens, components, and layout patterns |
+| `references/lab_style_guide.md` | CT AI Lab app style guide: chrome, logo, colors, type, spacing, controls, accessibility checks |
+| `references/ct_design_system.md` | Design tokens, components, and layout patterns scraped from portal.ct.gov |
+| `references/ui_audit.py` | Playwright check of a running app against the style guide (text size, control size, headings, overflow) |
 | `references/fastapi_scaffold.md` | Standard FastAPI project structure and conventions |
 
 ## Installation
@@ -127,7 +131,7 @@ Use $ctstyles to align this UI to our design system.
 This repo is designed to be forked and customized:
 
 1. Fork this repo.
-2. Replace `references/ct_design_system.md` with your own design tokens and component patterns.
+2. Replace `references/lab_style_guide.md` and `references/ct_design_system.md` with your own style rules, design tokens and component patterns.
 3. Rename `ctstyles` to your state naming if preferred (for example, `nystyles`, `castyles`).
 4. Update deployment checks in `deploymentprecheck` for your cloud target if not Azure.
 5. Keep scaffold, accessibility, mobile, lint, and hook mostly unchanged.
