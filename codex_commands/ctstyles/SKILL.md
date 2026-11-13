@@ -15,6 +15,7 @@ description: Apply an organization design system to a web application. Use when 
 1. Locate a design reference before editing.
 - Prefer user-provided reference paths first.
 - Otherwise check common project paths such as:
+  - `./references/lab_style_guide.md` (CT AI Lab rules: chrome, logo, type scale, control sizes, checks; read it first, it wins over the token file)
   - `./references/ct_design_system.md`
   - `./references/design_system.md`
   - `../references/ct_design_system.md`
@@ -58,6 +59,7 @@ description: Apply an organization design system to a web application. Use when 
 - Ensure horizontal layouts collapse predictably on smaller screens.
 - Specifically verify header nav, button rows, table containers, filters/selectors, and side-by-side cards at mobile widths.
 - If no browser runtime is available, reason through the DOM and CSS breakpoints carefully and state that visual verification is still pending.
+- If `references/ui_audit.py` is available and the app runs locally, run it over the main pages; it flags text under 14px, controls under 44px, h1 count, skipped heading levels and sideways scrolling.
 
 6. Summarize changes.
 - Report files changed and what was aligned to the design system.

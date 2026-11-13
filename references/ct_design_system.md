@@ -4,6 +4,9 @@ This document defines the design tokens, component patterns, and layout conventi
 
 Derived from [portal.ct.gov](https://portal.ct.gov) and the CT Office of the Healthcare Advocate's applications.
 
+> Lab apps follow `lab_style_guide.md` (same folder) for sizes and structure. Where this file
+> differs (16px body, 700px breakpoint), the style guide wins: 18px body, 14px minimum, 640px.
+
 ---
 
 ## Design Tokens (CSS Custom Properties)
